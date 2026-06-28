@@ -31,6 +31,7 @@ with open("sequence1.txt","r") as file:
         count_T=0
         count_G=0
         count_C=0
+        #counting the number of A,T,G and C
         for i in range(0,len(bases)):
             for _ in bases[i][j]:
                 if _ == 'A':
@@ -41,12 +42,15 @@ with open("sequence1.txt","r") as file:
                     count_G+=1
                 elif _ == 'C':
                     count_C+=1
+        #Making a list to store count of A,T,G,C
         A.append(count_A)
         T.append(count_T)
         G.append(count_G)
         C.append(count_C)
     for i in range(0,len(A)):
+        #Taking base which has highest count
         seq=max(A[i],T[i],G[i],C[i])
+        #comparing the number using index then printing result
         if A[i]==seq:
             print("A",end="")
         elif T[i]==seq:
@@ -57,6 +61,7 @@ with open("sequence1.txt","r") as file:
             print("C",end="")
     print()
     print("A:",end=" ")
+    #printing count of A without bracket []
     print(*A)
     print("C:",end=" ")
     print(*C)
